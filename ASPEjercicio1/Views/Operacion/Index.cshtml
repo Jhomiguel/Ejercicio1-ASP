@@ -1,0 +1,31 @@
+﻿@model ASPEjercicio1.Models.operacion
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div class="row">
+        @using (Html.BeginForm("/Index", "operacion", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="numero">Numero a invertir</label> <br />
+                @Html.EditorFor(x =>x.numero)
+            </div>
+            <div class="form-group">
+                <label for="resultado">Resultado</label>
+                @Html.DisplayFor(x =>x.numero)
+            </div>
+            <button type="submit" class="btn-primary" id="enviar" value="enviar" name="operacion">Enviar</button>
+
+
+        }
+
+    </div>
+</body>
+</html>
+
